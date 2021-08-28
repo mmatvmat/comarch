@@ -64,7 +64,8 @@ public class Customer
         return identity_number;
     }
 
-    public void setIdentityNumber(String identityNumber) {
+    public void setIdentityNumber(String identityNumber)
+    {
         this.identity_number = identityNumber;
     }
 }

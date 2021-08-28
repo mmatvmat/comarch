@@ -1,6 +1,7 @@
 package com.comarch.requests;
 
-public class AddCustomerRequest {
+public class AddCustomerRequest
+{
     public String name;
     public  String surname;
     public String email;

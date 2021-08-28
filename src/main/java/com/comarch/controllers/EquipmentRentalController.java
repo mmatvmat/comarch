@@ -1,6 +1,5 @@
 package com.comarch.controllers;
 
-
 import com.comarch.models.Equipment;
 import com.comarch.models.EquipmentRental;
 import com.comarch.repositories.EquipmentRentalRepository;
@@ -13,15 +12,13 @@ import org.springframework.web.bind.annotation.*;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.Calendar;
-import java.util.Date;
 import java.util.List;
 import java.util.stream.Collectors;
 
 @RestController
 @RequestMapping("EquipmentRental")
-public class EquipmentRentalController {
-
+public class EquipmentRentalController
+{
     @Autowired
     private EquipmentRentalRepository equipmentRentalRepository;
     @Autowired

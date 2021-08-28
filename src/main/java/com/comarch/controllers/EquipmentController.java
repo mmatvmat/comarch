@@ -9,7 +9,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.time.OffsetDateTime;
-import java.util.Date;
 
 @RestController
 @RequestMapping("Equipment")
@@ -32,14 +31,16 @@ public class EquipmentController
     @RequestMapping(value = "{id}", method = RequestMethod.PUT)
     public Equipment updateEquipmentPrice(@PathVariable Integer id, @RequestBody UpdateEquipmentPriceRequest priceUpdate) throws NotFoundException
     {
-        // Nie byłam pewna czy aktualizacja ceny powinna być dla danego typu produktu czy tylko dla 1 określonego produktu
-        //ponieważ odkurzacze mogą różnić się modelami i mieć inną cenę za minutę użytkowania
-        // Jeśli cena byłaby określana na postawie typu produktu wtedy dodałabym tabelę zawierającą typ produktu, skrócony kod oraz cenę a tabeli
-        //equipment byłaby kolumna kodem typu produktu
+        /*Nie byłam pewna, czy aktualizacja ceny powinna być dla danego typu produktu czy tylko dla jednego określonego produktu,
+        ponieważ odkurzacze mogą różnić się modelami i mieć inną cenę za minutę użytkowania.
+        Jeśli cena byłaby określana na podstawie typu produktu, wtedy dodałabym tabelę zawierającą typ produktu, skrócony kod oraz cenę, a w tabeli
+        equipment byłaby kolumna z kodem typu produktu*/
+
         if(!equipmentRepository.existsById(id))
         {
             throw new NotFoundException("Object does not exists");
         }
+
         Equipment equipmentForUpdate = equipmentRepository.getOne(id);
         equipmentForUpdate.setPrice(priceUpdate.price);
         return equipmentRepository.saveAndFlush(equipmentForUpdate);

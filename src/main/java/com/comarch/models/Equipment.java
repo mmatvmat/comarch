@@ -17,11 +17,6 @@ public class Equipment
     private double price_per_minute;
     private OffsetDateTime date_added;
 
-    public Equipment()
-    {
-
-    }
-
     public int getID() {
         return id;
     }

@@ -9,12 +9,14 @@ import javax.persistence.EntityManager;
 import javax.persistence.metamodel.Type;
 
 @Configuration
-public class RepositoryConfig extends RepositoryRestConfigurerAdapter {
+public class RepositoryConfig extends RepositoryRestConfigurerAdapter
+{
     @Autowired
     private EntityManager entityManager;
 
     @Override
-    public void configureRepositoryRestConfiguration(RepositoryRestConfiguration config) {
+    public void configureRepositoryRestConfiguration(RepositoryRestConfiguration config)
+    {
         config.exposeIdsFor(
                 entityManager.getMetamodel().getEntities().stream()
                         .map(Type::getJavaType)

@@ -1,6 +1,5 @@
 package com.comarch.controllers;
 
-
 import com.comarch.models.Customer;
 import com.comarch.repositories.CustomerRepository;
 import com.comarch.requests.AddCustomerRequest;
@@ -12,13 +11,14 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("Customer")
-public class CustomerController {
-
+public class CustomerController
+{
     @Autowired
     private CustomerRepository customerRepository;
 
     @PostMapping
-    public Customer AddCustomer(@RequestBody AddCustomerRequest addCustomerRequest){
+    public Customer AddCustomer(@RequestBody AddCustomerRequest addCustomerRequest)
+    {
         Customer customer = new Customer();
         customer.setName(addCustomerRequest.name);
         customer.setSurname(addCustomerRequest.surname);

@@ -71,15 +71,18 @@ public class EquipmentRental
         price = price;
     }
 
-    public void setPriceEndBasedOnRentalTime(double price, int time_in_minutes) {
+    public void setPriceEndBasedOnRentalTime(double price, int time_in_minutes)
+    {
         this.price = price * time_in_minutes;
     }
 
-    public void setDateEndBasedOnRentalTime(OffsetDateTime rental_start, int time_in_minutes) {
+    public void setDateEndBasedOnRentalTime(OffsetDateTime rental_start, int time_in_minutes)
+    {
         this.rental_end = rental_start.plusMinutes(time_in_minutes);
     }
 
-    public boolean getIsPaid() {
+    public boolean getIsPaid()
+    {
         return is_paid;
     }
 
@@ -87,11 +90,13 @@ public class EquipmentRental
         this.is_paid = is_paid;
     }
 
-    public int getTimeInMinutes() {
+    public int getTimeInMinutes()
+    {
         return time_in_minutes;
     }
 
-    public void setTimeInMinutes(int time_in_minutes) {
+    public void setTimeInMinutes(int time_in_minutes)
+    {
         this.time_in_minutes = time_in_minutes;
     }
 }
